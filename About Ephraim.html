@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Other head elements like title and link to CSS it (links to social accounts) -->
+
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>ABOUT | Ephraim Mutwiri</title>
+
+
+<style>
+
+body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffe0f3;
+
+        }
+
+        
+        header {
+            background-color: #000000;
+            color: white;
+            padding: 10px 20px;
+        }
+         
+        .logo-img{
+         width:300px;
+         height: fit-content;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 10px;
+            display: flex;
+            gap: 15px;
+        }
+
+        nav ul li {
+            margin: 0;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 5px;
+        }
+
+        nav ul li a:hover {
+            background-color: #60ffca;
+            color: #000000;
+        }
+
+        /* Hamburger Menu Styles */
+        .menu-icon {
+            display: none;
+            cursor: pointer;
+            font-size: 24px;
+        }
+
+        .menu-icon div {
+            width: 30px;
+            height: 4px;
+            background-color: white;
+            margin: 5px 0;
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                flex-direction: column;
+                background-color: #333;
+                position: absolute;
+                top: 75px;
+                right: 20px;
+                width:max-content;
+                box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+            }
+
+
+            nav ul.active {
+                display: flex;
+            }
+
+            .menu-icon {
+                display: block;
+            }
+        }
+
+
+
+main {
+ padding: 30px;
+}
+	
+#about{background-color: #60ffca;
+width: fill;
+height: fit-content;
+padding: 20px;
+}
+
+#about p{color: #000000;
+font-size:1.2rem;
+padding-bottom: 10px;
+max-width: 1000px;
+margin: 4px;
+}
+
+#media {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.media-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;}
+
+
+
+.media-box {
+    position: relative;
+    width: 400px;
+    margin: 15px;
+    overflow: hidden;
+    cursor: pointer; /* Cursor changes to pointer on hover */
+    transition: transform 0.3s;
+}
+
+.media-box:hover {
+    transform: scale(1.05); /* Slightly zoom in on hover */
+}
+
+.media-image {
+    width: 100%;
+    transition: transform 0.5s ease;
+}
+
+.media-info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0; /* Start hidden */
+    transition: opacity 0.5s ease; /* Fade effect */
+}
+
+.media-box:hover .media-info {
+    opacity: 1; /* Show info on hover */
+}
+
+.media-box:hover .media-image {
+    transform: translateX(-100%); /* Move image out */
+}
+
+
+/*Hover boxes style*/
+#services{ padding: 20px;
+    text-align: center;
+
+}
+
+#hover-boxes {
+    display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+   
+
+}
+
+.hover-box {
+    background-color: #60ffca; /* Light background for boxes */
+    border: 0px solid #00a2ff; /* Light border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 20px; /* Padding inside the box */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition for hover effects */
+    text-align: center; /* Center text */
+    width: 400px;
+    padding: 15px;
+    box-shadow: 0 2px 5px #33333378; /* Add shadow  */
+}
+
+.hover-box:hover {
+    background-color: #00ff6a;
+    transform: translateY(-7px); /* Lift the box on hover */
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.488); /* Add shadow on hover */
+}
+
+
+/*STATISTICS STYLES*/
+#statistics {
+    text-align: center;
+    margin: 40px 0; /* Space above and below */
+    padding: 20px;
+}
+
+.statistics-container { 
+    display: flex; /* Flexbox for horizontal layout */
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition for hover effects */
+
+}
+.statistic {
+    box-shadow: 0 2px 12px #33333378; /* Add shadow  */
+    background-color: #e5ff00; /* Light background for boxes */
+    border: 0px solid #ddd; /* Light border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 20px; /* Padding inside the box */
+    width: 270px;
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition for hover effects */
+        
+}
+
+.statistic:hover {
+    background-color:#ffd000 ;
+    transform: translateY(6px); /* Lift the box on hover */
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.488); /* Add shadow on hover */
+}
+
+.statistic h3 {
+    font-size: 2em; /* Large font for the numbers */
+    color: #ae00ff; /* Color for the numbers */
+}
+
+.statistic p {
+    font-size: 1em; /* Smaller font for the description */
+    color: #000000; /* Darker color for text */
+}
+
+/*STYLE FOR  THE  REVIWS*/
+.container { padding: 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #d3ffc2;
+            box-shadow: 0 0 10px #0000001a;
+            border-radius:5px ;
+        }
+
+        .reviews-title {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+
+        .review-list {
+            margin-top: 30px;
+        }
+
+        .review-item {
+            background-color: #dcdcdc;
+            padding: 15px;
+            border: 1px solid #332a2a;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition for hover effects */
+
+        }
+
+        .review-item:hover {
+            background-color: #71ffff;
+    transform: translateY(5px); /* Lift the box on hover */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7); /* Add shadow on hover */
+}
+
+
+        .review-item h4 {
+            margin: 0;
+            font-size: 1.2em;
+            color: #333;
+        }
+
+        .review-item p {
+            margin: 10px 0;
+            color: #242121;
+        }
+
+        .review-item .rating {
+            color: #ff5e00;
+        }
+
+
+/*FOOTER STYLE*/
+.footer {
+    background-color:#333;
+    color: rgb(255, 255, 255); /* White text */
+    text-align: center; /* Centered text */
+    padding: 2px; /* Padding for footer */
+    position: relative; /* Ensure footer stays at the bottom */
+	height:fit-content;
+}
+
+.footer-links {
+    margin-bottom: 0px; /* Space below the links */
+}
+
+.footer-links a {
+    color: white; /* Link text color */
+    text-decoration: none; /* Remove underline from links */
+    margin: 0 15px; /* Space between links */
+    transition: color 0.3s; /* Smooth transition for hover effect */
+}
+.footer-links a:hover {
+    color: #007BFF; /* Change color on hover */
+}
+
+#contact-info {
+    text-align: center; /* Center text */
+	color:#fff;
+}
+
+
+
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 30px;
+  color: #007BFF;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 50%;
+}
+.fa:hover {
+    color: #fff; /* Change color on hover */
+}
+
+.contact-details p {
+    font-size: 1.2em; /* Font size for email and phone */
+    color: #fff; /* Darker color for text */
+}
+
+.contact-details a {font-size: 1.1em;
+color: #7beed3;
+text-decoration: none;}
+
+.contact-details a:hover{ color:#007BFF;
+text-decoration: none;}
+
+
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const menuIcon = document.querySelector(".menu-icon");
+        const navLinks = document.querySelector("nav ul");
+
+        menuIcon.addEventListener("click", () => {
+            navLinks.classList.toggle("active");
+        });
+    });
+</script>
+</head>
+<body>
+<header>
+    <nav>
+        <div><img src="port logo.jpg" class="logo-img"></div><!--logo division-->
+        <ul>
+            <li><a href="index.html">Home</a></li>            <li><a href="About Ephraim.html">About</a></li>
+            <li><a href="serviices.html">Services</a></li>
+            <li><a href="portfolio projects.html">Portfolio</a></li>
+            <li><a href="Contact Ephraim.html">Contact</a></li>
+            <li><a href="https://www.ephraimcreations.online/" target="_blank">Visit Ephraim Creations</a></li>
+        </ul>
+        <div class="menu-icon">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </nav>
+</header>
+
+
+
+<!-- For IE 10 and below -->
+<!-- No need to specify type, as the browser defaults to 'image/x-icon' -->
+<link rel="shortcut icon" href="welcome to ec.png">
+
+<!-- For IE 11, Chrome, Firefox, Safari, Opera -->
+<link rel="icon" href="/favicon-16x16.png" sizes="16x16" type="image/png">
+<link rel="icon" href="/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/favicon-48x48.png" sizes="48x48" type="image/png">
+
+<!-- For iOS devices -->
+<link rel="apple touch icon" href="/apple-touch-icon.png" sizes="180x180">
+
+</head>
+
+<body>
+
+ 
+<center>  
+   <section id="about">
+   <h2>About me</h2> 
+    <p>Hi, I’m Ephraim Mutwiri, a passionate website developer and designer with over 2 years of experience
+         in creating stunning and functional websites.My goal is to deliver high-quality web solutions that
+          not only look great but also provide a seamless user experience.
+          <br>
+        I specialize in responsive web design, ensuring that your website looks amazing on all devices. Whether
+         you need a personal blog, a corporate website, or an e-commerce platform, I’m here to help you bring 
+         your vision to life.</p>
+</section>
+
+<main>
+<section id="media">
+    <h2>A little about my work...</h2>
+    <p><i>hover through the images below and let the magic happen</i></p>
+    <div class="media-container">
+        <div class="media-box" onclick="swapMedia(this)">
+            <img src="MY SITE(3).png" alt="Online Class" class="media-image">
+            <div class="media-info">
+                <h3>A community of growth</h3><br>
+                <p>A website I created for an online school. Teachers schedule online classes in one place. </p>
+            </div>
+        </div>
+        <div class="media-box" onclick="swapMedia(this)">
+            <img src="ec.jpg" alt="Ephraim Creations" class="media-image">
+            <div class="media-info">
+                <h3>Ephraim Creations</h3><br>
+                <p>I founded a website design Agency called<br> Ephraim Creations. </p>
+            </div>
+        </div>
+        <div class="media-box" onclick="swapMedia(this)">
+            <img src="Fun&rest.jpg" alt="A restaurant" class="media-image">
+            <div class="media-info">
+                <h3>A restaurant</h3><br>
+                <p>Fun & rest is a revolusionalized restaurant website</p>
+            </div>
+        </div>
+        <div class="media-box" onclick="swapMedia(this)">
+            <img src="tg pc.jpg" alt="Travelling CO." class="media-image">
+            <div class="media-info">
+                <h3>Travelling Guru</h3><br>
+                <p>This is a website I created for a Travelling company.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="media homepage.js"></script>
+
+
+		 <section id="services">
+    <h2>My Services...</h2>
+    <div id="hover-boxes">
+        <div class="hover-box">
+            <h3>Web Development</h3>
+            <p>Custom website development using the latest technologies to ensure performance and scalability.</p>
+        </div>
+
+        <div class="hover-box">
+            <h3>Web Design</h3>
+            <p>Beautiful and intuitive designs tailored to your brand identity and target audience.</p>
+            <br>
+            <p class="review">5.0 &#9733;&#9733;&#9733;&#9733;&#9733; (15 ratings)</p>
+        </div>
+
+        <div class="hover-box">
+            <h3>Graphic Design</h3>
+            <p>Beautiful and intuitive designs tailored to your brand identity and target audience.</p>
+            <p>e.g. posters, wedding cards, logos, book covers, business cards and social post/ illustrations. </p>
+        </div>
+
+        <div class="hover-box">
+          <h3>E-commerse solutions</h3>
+          <p>Craft powerful online stores with user-friendly interfaces and secure payment options.</p>
+        </div>
+
+    </div>
+</section>
+
+		
+		<section id="statistics">
+    <h2>My Achievements</h2>
+    <div class="statistics-container">
+        <div class="statistic">
+            <h3 id="customers-served">100+</h3>
+            <p>Customers Served</p>
+        </div>
+        <div class="statistic">
+            <h3 id="websites-created">20+</h3>
+            <p>Websites Created</p>
+        </div>
+        <div class="statistic">
+            <h3 id="partners">20+</h3>
+            <p>Partners</p>
+        </div>
+        <div class="statistic">
+            <h3 id="partners"> 2+</h3>
+            <p>Experience (years)</p>
+        </div>
+    </div>
+</section>
+	
+
+<div class="container">
+    <h1 class="reviews-title">Customer Reviews</h1>
+
+    <!-- Display Reviews -->
+    <div class="review-list">
+        <div class="review-item">
+            <h4>Newton Musembi</h4>
+            <p> <i>(Entreprenuer)</i></p>
+            <p class="rating">Rating: ★★★★★</p>
+            <p>Ephraim's website design is amazing! It exceeded my expectations and I would highly recommend it to others.
+                It took two(2) weeks to complete my e-commerce platform including adding all products and also the content.
+            </p>
+        </div>
+        <div class="review-item">
+            <h4>Ann James</h4>
+            <p> <i>(Digital & Affiliate Marketer)</i></p>
+            <p class="rating">Rating: &#9733;&#9733;&#9733;&#9733;&#9734;</p>
+            <p>Great quality advertising posters and fast delivery. I will definitely hire Ephraim again!</p>
+        </div>
+        <div class="review-item">
+            <h4>Jane Muthoni</h4>
+            <p> <i>(Entreprenuer)</i></p>
+            <p class="rating">Rating: &#9733;&#9733;&#9733;&#9733;&#9734;</p>
+            <p>Good logo👍 for my restaurant."Mountain View" </p>
+        </div>
+        <div class="review-item">
+            <h4>James Macharia</h4>
+           <p> <i>(Electrical Engineer)</i></p>
+            <p class="rating">Rating: &#9733;&#9733;&#9733;&#9733;&#9733;</p>
+            <p>It took only THREE days for Ephraim to create a portfolio website for me.
+                 I showcase all my projects in one space.  </p>
+        </div>
+        <div class="review-item">
+            <p><i style="color:rgb(4, 0, 255) ;">Yours is next</i></p>
+            <h4>(Client Name)</h4>
+            <p> <i>( YourTitle)</i></p>
+            <i><p class="rating">Your Rating: &#9734;&#9734;&#9734;&#9734;&#9734;</p></i>
+            <p><i> (Personal Review)</i></p>
+            <p><i>Order my services to stand a chance to post your review... <br> Thank You</i></p>
+        </div>
+
+    </div>
+</div>
+
+    </main>
+</center>
+
+  <!--FOOTER SECTION-->
+  <footer class="footer">
+    <h3>Quick links</h3>
+    <br>
+    <div class="footer-links">
+        <a href="About Ephraim.html">About</a>
+        <a href="serviices.html">services</a>
+        <a href="Contact Ephraim.html">Contact</a>
+        <a href="portfolio projects.html">Portfolio</a>
+    </div>
+        <section id="contact-info">
+<h2>Follow on socials</h2>
+        <!-- Social Media Links with Icons -->
+                <div class="social-media">
+                    <a href="https://www.facebook.com/ephraimmutwiri2024"  target="_blank" class="fa fa-facebook"></a>
+                    <a href="https://www.instagram.com/ephraim_mutwiri?igsh=YzljYTk1ODg3Zg==" target="_blank" class="fa fa-instagram"></a>
+                    <a href="https://www.linkedin.com/in/ephraim-mutwiri-052a58310" target="_blank" class="fa fa-linkedin"></a>
+                    <a href="https://youtube.com/@ephraimcreations01?si=3TZvja8EmGrbCQKV" target="_blank" class="fa fa-youtube"></a>
+                    <a href="" target="_blank" class="fa fa-twitter"></a> 
+                    
+            </div>
+    </section>
+<!--contact details-->
+<h2>Contact Me</h2>
+<p>Feel free to reach out for collaborations or project enquiries.</p>
+<div class="contact-details">
+    <p>Email: <a href="mailto:ephraimmutwiri01@gmail.com">ephraimmutwiri01@gmail.com</a></p>
+    <p>Phone: <a href="tel:+254112268873">+254 112 268 873</a></p>
+    <p>Order Services:<a href="https://www.ephraimcreations.online/book-online">Visit site</a></p>
+</div>
+<br>	
+<div class="copyright">
+    &copy; 2024-2025 Ephraim Mutwiri.<br>
+     A Website <a href="About Ephraim.html" style="color: #0ff;text-decoration: none;">Designer</a> <br><br><b>Reproduction of content strictly prohibited.</b>
+  </div>
+    <br>
+    <br>
+</footer>
+	
+</body>
+
+</html>

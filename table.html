@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>My table</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+        body {
+            background-color: #fcee77;
+            margin: 10e;
+            justify-content: center;
+            font-family: Arial;
+        }
+header{
+    background-color: rgb(0, 0, 0);
+    justify-content: center;
+    text-align: center;
+}
+img{
+    width: fit-content;
+}
+h2{
+    font-family: Algerian;
+    color: azure;
+}
+p{
+   color: #fff; 
+}
+
+nav{  display: flex;
+      justify-content: space-between;
+justify-content: center;
+}
+
+nav ul{
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+nav ul li{ padding: 10px;
+
+}
+
+
+nav ul li a {
+            text-decoration: none;
+            color: rgb(0, 0, 0);
+            padding: 15px;
+            border-radius: 15px;
+            background-color: aqua;
+        }
+        nav ul li a:hover{
+            background-color: blue;
+            color: #fff;
+        }
+
+
+table {margin-top: 20px;
+    justify-content: center;
+    border: 1px solid black;
+    width: fit-content;
+    height: fit-content;
+    padding: 30px;
+    margin-bottom: 20px;
+}
+
+tr,td,th{
+    padding: 10px;
+    border: 1px dotted rgb(255, 0, 0);
+}
+footer{
+    display: flex;
+    justify-content: center;
+    color: #fff;
+    background-color: black;
+
+}
+#about-company{
+    padding:20px ;
+}
+#about-company h3{
+    font-family: MV Boli;
+}
+#contact-details{
+padding: 20px;
+}
+#contact-details h3{
+font-family: MV Boli;
+}
+#contact-details p a{
+    color: aqua;
+    text-decoration: none;
+}
+#contact-details p a:hover{
+    color: blue;
+    text-decoration:none;
+}
+#facebook{
+    padding: 20px;
+}
+#facebook h3{
+    font-family: MV Boli;
+}
+#facebook a{
+    color: aqua;
+}
+#facebook a:hover{
+    color: blue;
+}
+</style>
+</head>
+<body>
+    <header>
+<img src="port logo.jpg" alt="My logo">
+<h2>This is a Table</h2>
+<p>Lets learn how to create a table<br>
+    We created this with Mwangi on date 15-12-2024<br>
+    Join us in learnind web development
+</p>
+<nav>
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</nav>
+    </header>
+
+<!--Table-->
+<center>
+<table>
+<tr><!--Headings-->
+    <th>No</th>
+    <th>Name</th>
+    <th>Math</th>
+    <th>Chem</th>
+    <th>Eng</th>
+    <th>Bio</th>
+</tr>
+
+<tr><!--First student-->
+<td>1</td>
+<td>John</td>
+<td>45%</td>
+<td>45%</td>
+<td>45%</td>
+<td>45%</td>
+</tr>
+
+<tr><!--2nd student-->
+    <td>2</td>
+    <td>Judy</td>
+    <td>45%</td>
+    <td>45%</td>
+    <td>45%</td>
+    <td>45%</td>
+    </tr>
+    <tr><!--3rd student-->
+        <td>3</td>
+        <td>Alex</td>
+        <td>45%</td>
+        <td>45%</td>
+        <td>45%</td>
+        <td>45%</td>
+        </tr>
+
+    </table>
+</center>
+
+<footer>
+    <div id="about-company">
+        <h3>About</h3>
+        <p>
+location: Nyahururu<br>
+Opening time: 7am to 5pm<br>
+Opening days: Monday to friday<br>
+        </p>
+    </div>
+<div id="contact-details">
+    <h3>Contact details</h3>
+    <p>Email: <a href="mailto:example@gmail.com@gmail.com">example@gmail.com</a></p>
+    <p>Phone:<a href="tel:+254712345678">0712345678</a></p>
+</div>
+
+<div id="facebook">
+<h3>Follow us</h3>
+<p>
+Facebook: <a href="https://facebook.com" target="_blank">View page</a>
+</p>
+
+</div>
+
+</footer>
+
+</body>
+</html>

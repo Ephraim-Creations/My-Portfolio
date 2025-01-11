@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIGN UP/ LOG IN | Ephraim Mutwiri</title>
+    <link rel="stylesheet" href="css to sign in.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <h2 id="form-title">Login</h2>
+            <form id="loginForm" onsubmit="return false;">
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="example@gmail.com" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="enter log in password" required>
+                </div>
+                <button type="submit" onclick="login()">Login</button>
+                <p class="toggle-link">Don't have an account? <a href="#" onclick="toggleForm()">Sign up here</a></p>
+            </form>
+            <form id="signupForm" style="display: none;" onsubmit="return false;">
+                <div class="input-group">
+                    <label for="signupEmail">Email</label>
+                    <input type="email" id="signupEmail" placeholder="example@gmail.com" required>
+                </div>
+                <div class="input-group">
+                    <label for="signupPassword">Password</label>
+                    <input type="password" id="signupPassword" placeholder="enter a strong password" required>
+                </div>
+                <div class="input-group">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input type="password" id="confirmPassword"placeholder="confirm password" required>
+                </div>
+                <button type="submit" onclick="signup()">Sign Up</button>
+                <p class="toggle-link">Already have an account? <a href="#" onclick="toggleForm()">Login here</a></p>
+            </form>
+    </div> 
+
+
+	<div><!--this div is for the home button-->
+        <a href="Ephraim(home).html" class="button">Home</a>
+        <style>
+            .button {
+    text-decoration: none; /* Remove underline from links */
+    color: white; /* Button text color */
+    background-color: #007BFF; /* Button background color */
+    padding: 10px 15px; /* Button padding */
+    border-radius: 18px; /* Rounded corners */
+    transition: background-color 0.4s; /* Smooth transition for hover effect */
+}
+
+.button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+        </style>
+    </div>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>

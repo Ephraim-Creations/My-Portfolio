@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+        }
+        nav {
+            text-align: center;
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #333;  
+		  background-color: #007BFF; /* Button background color */
+		      font-size: 10px;
+    text-decoration: none; /* Remove underline from links */
+    color: white; /* Button text color */
+    padding: 10px 20px; /* Button padding */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.4s; /* Smooth transition for hover effect */
+width:30px;
+        }
+		
+		
+		
+		
+		/*style nav*/
+		.nav-buttons { 
+    list-style: none; /* Remove bullets */
+    padding: 0; /* Remove padding */
+}
+
+.nav-buttons li {
+    display: inline; /* Display buttons in a row */
+    margin: 0 ; /* Space between buttons */
+}
+
+
+nav a:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+		
+		
+        section {
+            padding: 20px;
+            text-align: center;
+        }
+        .projects {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .project {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 300px;
+            padding: 15px;
+            box-shadow: 0 2px 5px #000;
+        }
+        .project img {
+            width: 100%;
+            border-radius: 5px;
+	        height: auto;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+			border: 1px solid black;
+        }
+		
+		.project img:hover {
+            transform: scale(1.1);
+        }
+		
+       #project-links {
+            text-align: center;
+            margin-top: 20px;
+        }
+        #project-links a {
+            font-size: 10px;
+            text-decoration: none;
+            color: #333;
+            font-size: 1.2rem;
+            padding: 10px 20px;
+            border: 1px solid #333;
+            border-radius: 5px;
+            margin: 0 10px;
+            transition: background-color 0.3s ease-in-out;
+        }
+        #project-links a:hover {
+            background-color: #333;
+            color: #fff;
+        }
+		
+
+        /* Fullscreen Image */
+        #fullScreenImage {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        #fullScreenImage img {
+            max-width: 90%;
+            max-height: 90%;
+        }
+        #closeBtn {
+            position: absolute;
+            top: 20px;
+            right: 40px;
+            color: #fff;
+            font-size: 2rem;
+            cursor: pointer;
+            z-index: 1001;
+        }
+		
+ 
+    </style>
+</head>
+<body>
+    <header>
+        <h1>My Portfolio</h1>
+        <p>Welcome to my personal portfolio website!</p>
+    </header>
+    <nav>
+	    <ul class="nav-buttons">
+        <li><a href="Ephraim(home).html" >Home</a></li>
+        <li><a href="About Ephraim.html" >About</a></li>
+        <li><a href="Contact Ephraim.html" >Contact</a></li>  
+        <li><a href="portfolio projects.html" >Portfolio</a></li>  
+        <li><a href="sign up and log in.html">Sign/log in</a></li>  
+		</ul>
+		
+    </nav>
+    <section id="about">
+        <h2>About Me</h2>
+        <p>Hello! I'm a passionate web developer specializing in creating responsive and visually appealing websites.</p>
+    </section>
+	
+	<!--The fist layer of portfolio-->
+    <section id="projects">
+        <h2>My recent projects</h2>
+        <div class="projects">
+            <div class="project">
+                <img src="ec.jpg" alt="Ephraim Creations" onclick="openFullScreen(this)">
+                <h3>Ephraim Creations</h3>
+                <p>This is my website design agency</p>
+				<div id="project-links">
+				<a href="https://www.ephraimcreations.online/" target="_blank">Go to site</a>
+				</div>
+            </div>    
+			
+			    <div class="projects">.
+            <div class="project">
+                <img src="shop.png" alt="Shop 8(An online store)" onclick="openFullScreen(this)">
+                <h3>Online shop</h3>
+                <p>This is a shop website.Customers buy online</p>
+				<div id="project-links">
+				<a href="https://lileph01.wixsite.com/shop" target="_blank">Go to site</a>
+				</div>
+            </div>     
+			
+			   <div class="projects">
+            <div class="project">
+                <img src="criticall builders.png" alt="Critical builders" onclick="openFullScreen(this)">
+                <h3>Ephraim Creations</h3>
+                <p>This is a building store website</p>
+				<div id="project-links">
+				<a href="https://lileph01.wixsite.com/criticalbuilders" target="_blank">Go to site</a>
+				</div>
+            </div>	
+        </div>
+    </section>
+	
+	
+		<!--The second layer of portfolio-->
+    <section id="projects">
+        <div class="projects">
+            <div class="project">
+                <img src="tg pc.jpg" alt="Traveling Goru website" onclick="openFullScreen(this)">
+                <h3>Traveling Guru</h3>
+                <p>This is a travelling agency website.</p>
+				<div id="project-links">
+				<a href="https://lileph01.wixsite.com/travelingguru" target="_blank">Go to site</a>
+				</div>
+            </div>    
+			
+			    <div class="projects">.
+            <div class="project">
+                <img src="MY SITE(3).png" alt="OnlineSchool" onclick="openFullScreen(this)">
+                <h3>Online School</h3>
+                <p>This is a School website.Classes are online</p>
+				<div id="project-links">
+				<a href="https://lileph01.wixsite.com/mysite-1" target="_blank">Go to site</a>
+				</div>
+            </div>     
+			
+			   <div class="projects">
+            <div class="project">
+                <img src="Fun&rest.jpg" alt="Fun & rest website(restaurant)" onclick="openFullScreen(this)">
+                <h3>Have fun in this website</h3>
+                <p>Yes! it is fun and rest. A restaurant website</p>
+				<div id="project-links">
+				<a href="https://lileph01.wixsite.com/fun-and-rest" target="_blank">Go to site</a>
+				</div>
+            </div>	
+        </div>
+    </section>
+	
+	<!--Third layer-->
+	    <section id="projects">
+        <h2>My recent projects</h2>
+        <div class="projects">
+            <div class="project">
+                <img src="book store.jpg" alt="An online book store" onclick="openFullScreen(this)">
+                <h3>An online book store</h3>
+                <p>This is an online boo store. Visit to purchase.</p>
+				<div id="project-links">
+				<a href="https://lileph01.wixsite.com/my-book-store" target="_blank">Go to site</a>
+				</div>
+            </div>    
+			
+			    <div class="projects">.
+            <div class="project">
+                <img src="services EC.jpg" alt="Services at Ephraim Creations" onclick="openFullScreen(this)">
+                <h3>Web and graphic design services</h3>
+                <p>View some of our services. Make orders(book) in one place.
+				You can contact me to learn more.</p>
+				<div id="project-links">
+				<a href="https://www.ephraimcreations.online/book-online" target="_blank">Go to site</a>
+				</div>
+            </div>     
+			
+			   <div class="projects">
+            <div class="project">
+               <h1 style="color:red;">STAY TUNED</h1>
+                <h3>More Updates are coming</h3>
+<p>Exciting updates are on the way! I am 
+    working hard behind the scenes to bring you fresh content,
+    including a showcase of my latest website design projects. My
+    portfolio will feature a range of creative designs tailored to
+    meet diverse client needs, giving you a glimpse of the quality and
+    craftsmanship I deliver. Stay tuned as I roll out these updates soon,
+     and discover how I can help bring your vision to life.
+</p> 
+				</div>
+            </div>	
+        </div>
+    </section>
+	
+	    <div id="fullScreenImage">
+        <span id="closeBtn" onclick="closeFullScreen()">&#x2716;</span>
+        <img src="" id="fullImg" alt="Fullscreen Image">
+    </div>
+
+	
+	    <script>
+        function openFullScreen(image) {
+            document.getElementById("fullImg").src = image.src;
+            document.getElementById("fullScreenImage").style.display = "flex";
+        }
+
+        function closeFullScreen() {
+            document.getElementById("fullScreenImage").style.display = "none";
+        }
+    </script>
+</body>
+</html>

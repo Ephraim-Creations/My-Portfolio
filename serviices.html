@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SERVICES | Ephraim Mutwiri</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      background-color: #ffe0f3;
+
+    }
+        /* General Styles */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #e8d9d9;
+
+        }
+
+        header {
+            background-color: #000000;
+            color: white;
+            padding: 10px 20px;
+        }
+         
+        .logo-img{
+         width:300px;
+         height: fit-content;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 10px;
+            display: flex;
+            gap: 15px;
+        }
+
+        nav ul li {
+            margin: 0;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 5px;
+        }
+
+        nav ul li a:hover {
+            background-color: #60ffca;
+            color: #000000;
+        }
+
+        /* Hamburger Menu Styles */
+        .menu-icon {
+            display: none;
+            cursor: pointer;
+            font-size: 24px;
+        }
+
+        .menu-icon div {
+            width: 30px;
+            height: 4px;
+            background-color: white;
+            margin: 5px 0;
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                flex-direction: column;
+                background-color: #333;
+                position: absolute;
+                top: 75px;
+                right: 20px;
+                width:max-content;
+                box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+            }
+
+
+            nav ul.active {
+                display: flex;
+            }
+
+            .menu-icon {
+                display: block;
+            }
+        }
+
+
+
+/*style sections*/
+    .services-section {
+      text-align: center;
+      padding: 15px;
+      background-color: #ffe0f3;
+    }
+    .services-section h2 {
+      font-size: 2.5rem;
+      color: #333;
+    }
+    .services-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+    }
+    .service-card {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.623);
+      width: 400px;
+      height: 305px;
+      padding: 20px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .service-card:hover {
+      background-color: #0ff;
+      transform: translateY(-12px);
+      box-shadow: 0 8px 20px #333;
+    }
+    .service-card img {
+      width: 100%;
+      height: 170px;
+      object-fit: cover;
+      border-radius: 6px;
+      border: 1px solid #dcdcdc;
+    }
+    .service-card h3 {
+      margin: 15px 0 10px;
+      font-size: 1.5rem;
+      color: #555;
+    }
+    .service-card p {
+      font-size: 1rem;
+      color: #666;
+    }
+
+            /*FOOTER STYLE*/
+            .footer {
+    background-color:#333;
+    color: rgb(255, 255, 255); /* White text */
+    text-align: center; /* Centered text */
+    padding: 2px; /* Padding for footer */
+    position: relative; /* Ensure footer stays at the bottom */
+	height:fit-content;
+}
+
+.footer-links {
+    margin-bottom: 0px; /* Space below the links */
+}
+
+.footer-links a {
+    color: white; /* Link text color */
+    text-decoration: none; /* Remove underline from links */
+    margin: 0 15px; /* Space between links */
+    transition: color 0.3s; /* Smooth transition for hover effect */
+}
+.footer-links a:hover {
+    color: #007BFF; /* Change color on hover */
+}
+
+#contact-info {
+    text-align: center; /* Center text */
+	color:#fff;
+}
+
+
+
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 30px;
+  color: #007BFF;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 50%;
+}
+.fa:hover {
+    color: #fff; /* Change color on hover */
+}
+
+.contact-details p {
+    font-size: 1.2em; /* Font size for email and phone */
+    color: #fff; /* Darker color for text */
+}
+
+.contact-details a {font-size: 1.1em;
+color: #7beed3;
+text-decoration: none;}
+
+.contact-details a:hover{ color:#007BFF;
+text-decoration: none;}
+  </style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const menuIcon = document.querySelector(".menu-icon");
+        const navLinks = document.querySelector("nav ul");
+
+        menuIcon.addEventListener("click", () => {
+            navLinks.classList.toggle("active");
+        });
+    });
+</script>
+</head>
+<body>
+<header>
+    <nav>
+        <div><img src="port logo.jpg" class="logo-img"></div><!--logo division-->
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="About Ephraim.html">About</a></li>
+            <li><a href="serviices.html">Services</a></li>
+            <li><a href="portfolio projects.html">Portfolio</a></li>
+            <li><a href="Contact Ephraim.html">Contact</a></li>
+            <li><a href="https://www.ephraimcreations.online/" target="_blank">Visit Ephraim Creations</a></li>
+        </ul>
+        <div class="menu-icon">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </nav>
+</header>
+
+
+<div class="services-section"><!--First row-->
+  <h2>My Services</h2>
+  <div class="services-container">
+    <!-- Service 1 -->
+    <div class="service-card">
+      <img src="Mountain view.png" alt="Logo design">
+      <h3>Logo design</h3>
+      <p>I create modern logos tailored to your brand representation.</p>
+    </div>
+    <!-- Service 2 -->
+    <div class="service-card">
+      <img src="designs.png" alt="poster design">
+      <h3>Poster design</h3>
+      <p>I create modern posters tailored to your needs.</p>
+    </div>
+
+      <!--service 3-->
+      <div class="service-card">
+        <img src="Wedding Invitation.png" alt="wedding cards">
+        <h3>Wedding Cards design</h3>
+        <p>I create stunning cards for your weddings. A happy wedding day starts here!</p>
+      </div>
+  </div>
+</div>
+
+<div class="services-section"><!--second row-->
+    <div class="services-container">
+      <!-- Service 1 -->
+      <div class="service-card">
+        <img src="web auditing.jpg" alt="Website design">
+        <h3>website (new) design</h3>
+        <p>I will create a new website for you or your business</p>
+      </div>
+      <!-- Service 2 -->
+      <div class="service-card">
+        <img src="website redesign.png" alt="web redesign">
+        <h3>Website redesign</h3>
+        <p>I re-create/re-structure your website(personal/business) to a  style 
+     that will create a good user experience.</p>
+      </div>
+        <!--service 3-->
+        <div class="service-card">
+          <img src="shop.png" alt="e-commerce design">
+          <h3>E-commerce solutions</h3>
+          <p>I create modern & effective online stores with secure payment options.</p>
+        </div>
+
+    </div>
+  </div>
+
+  <div class="services-section"><!--3rd row-->
+    <div class="services-container">
+      <!-- Service 1 -->
+      <div class="service-card">
+        <img src="web auditing.jpg" alt="Website auditing">
+        <h3>Website Auditing</h3>
+        <p>I get into your website, analyze the functions and come up with ways to better the website.</p>
+      </div>
+      <!-- Service 2 -->
+      <div class="service-card">
+        <img src="Website consultancy.jpg" alt="website cunsultation">
+        <h3>Website cunsultation</h3>
+       <p>I an available for cunsultations when you are seeking information/knowledge about websites. </p>
+      </div>
+      <!--service 3-->
+      <div class="service-card">
+        <img src="Fun&rest.jpg" alt="web SEO">
+        <h3>Website SEO</h3>
+        <p>I do Search Engine Optimization for all your Wix and wordpress websites.
+         This helps you rank hire on search engines attracting customers .</p>
+      </div>
+      </div>
+</div>
+
+<div class="services-section"><!--4th row-->
+  <div class="services-container">
+    <!-- Service 1 -->
+    <div class="service-card">
+      <img src="coding service.jpg" alt="Front-End services">
+      <h3>Front-End coding services</h3>
+      <p>I create modern website by coding.The websites can be personal 
+        or business portfolios.
+      </p>
+    </div>
+
+    </div>
+</div>
+
+  <!--FOOTER SECTION-->
+  <footer class="footer">
+    <h3>Quick links</h3>
+    <br>
+    <div class="footer-links">
+        <a href="About Ephraim.html">About</a>
+        <a href="serviices.html">services</a>
+        <a href="Contact Ephraim.html">Contact</a>
+        <a href="portfolio projects.html">Portfolio</a>
+    </div>
+  <section id="contact-info">
+<h2>Follow on socials</h2>
+        <!-- Social Media Links with Icons -->
+                <div class="social-media">
+                    <a href="https://www.facebook.com/ephraimmutwiri2024"  target="_blank" class="fa fa-facebook"></a>
+                    <a href="https://www.instagram.com/ephraim_mutwiri?igsh=YzljYTk1ODg3Zg==" target="_blank" class="fa fa-instagram"></a>
+                    <a href="https://www.linkedin.com/in/ephraim-mutwiri-052a58310" target="_blank" class="fa fa-linkedin"></a>
+                    <a href="https://youtube.com/@ephraimcreations01?si=3TZvja8EmGrbCQKV" target="_blank" class="fa fa-youtube"></a>
+                    <a href="" target="_blank" class="fa fa-twitter"></a> 
+                    
+            </div>
+    </section>
+<!--contact details-->
+<h2>Contact Me</h2>
+<p>Feel free to reach out for collaborations or project enquiries.</p>
+<div class="contact-details">
+    <p>Email: <a href="mailto:ephraimmutwiri01@gmail.com">ephraimmutwiri01@gmail.com</a></p>
+    <p>Phone: <a href="tel:+254112268873">+254 112 268 873</a></p>
+    <p>Order Services:<a href="https://www.ephraimcreations.online/book-online">Visit site</a></p>
+</div>
+<br>	
+<div class="copyright">
+  &copy; 2024-2025 Ephraim Mutwiri.<br>
+   A Website <a href="About Ephraim.html" style="color: #0ff;text-decoration: none;">Designer</a> <br><br><b>Reproduction of content strictly prohibited.</b>
+</div>
+    <br>
+    <br>
+</footer>
+
+
+</body>
+</html>

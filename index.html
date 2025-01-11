@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOME | Ephraim Mutwiri</title>
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            justify-content: center;
+            font-family: Arial, sans-serif;
+            background-color: #ffe0f3;
+
+        }
+
+        header {
+            background-color: #000000;
+            color: white;
+            padding: 10px 20px;
+        }
+         
+         .logo-img{
+         width:300px;
+         height: fit-content;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 10px;
+            display: flex;
+            gap: 15px;
+        }
+
+        nav ul li {
+            margin: 0;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 5px;
+        }
+
+        nav ul li a:hover {
+            background-color: #60ffca;
+            color: #000000;
+        }
+
+        /* Hamburger Menu Styles */
+        .menu-icon {
+            display: none;
+            cursor: pointer;
+            font-size: 24px;
+        }
+
+        .menu-icon div {
+            width: 30px;
+            height: 4px;
+            background-color: white;
+            margin: 5px 0;
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                flex-direction: column;
+                background-color: #333;
+                position: absolute;
+                top: 150px;/*When I remove the Advert,, I restore original values*/
+                right: 50px;
+                width:max-content;
+                box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            .menu-icon {
+                display: block;
+            }
+        }
+
+/*STYLE FOR SECTIONS*/
+.hero {
+      text-align: center;
+      padding: 100px 20px;
+      background-color: #60ffca;
+      color: #000000;
+    }
+    .hero h2 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: 0 auto 20px;
+    }
+    .hero a {
+      display: inline-block;
+      background: #60ffca;
+      border:1px solid #000000;
+      color: #000000;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      transition: background 0.5s ease;
+    }
+    .hero a:hover {
+      background: #000000;
+      color: #ffffff;
+    }
+
+#advert{
+  background-color: rgb(255, 0, 64);
+  color: #000000;
+  height:35px;
+}
+#advert p{
+  margin-top: 0%;
+  padding: 0%; 
+  margin-bottom: 0%;
+font-size: 16px;
+}
+  
+
+    /*style for the projects*/
+    section {
+            padding: 20px;
+            text-align: center;
+        }
+        .projects {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .project {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 300px;
+            padding: 15px;
+            box-shadow: 0 2px 5px #000;
+        }
+        .project:hover {
+      background-color: #0ff;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px #333;
+    }
+        .project img {
+            width: 100%;
+            border-radius: 5px;
+	        height: auto;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+			border: 1px solid black;
+        }
+		
+        .project img:hover {
+            transform:translateY(2px);
+        }
+
+
+       #project-links {
+            text-align: center;
+            margin-top: 20px;
+        }
+        #project-links a {
+            font-size: 10px;
+            text-decoration: none;
+            color: #333;
+            font-size: 1.2rem;
+            padding: 10px 20px;
+            border: 1px solid #333;
+            border-radius: 5px;
+            margin: 0 10px;
+            transition: background-color 0.3s ease-in-out;
+        }
+        #project-links a:hover {
+            background-color: #333;
+            color: #fff;
+        }
+		
+
+        /* Fullscreen Image 4 ortfolio and about*/
+        #fullScreenImage {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        #fullScreenImage img {
+            max-width: 90%;
+            max-height: 90%;
+        }
+        #closeBtn {
+            position: absolute;
+            top: 20px;
+            right: 40px;
+            color: #fff;
+            font-size: 2rem;
+            cursor: pointer;
+            z-index: 1001;
+        }
+		
+
+/*style 4 about section*/
+/*style 4 about section*/
+#about{
+    justify-content: center;
+    text-align: center;
+  }
+
+  #about p{
+    text-align: center;
+    font-size: 1.2rem;
+      max-width: 800px;
+      margin: 0 auto 20px;
+  }
+
+  #about-image{justify-content: center;
+    gap:30px;
+    display: flex;
+     flex-wrap: wrap;
+     justify-content: center;
+
+
+}
+#about-image img{width:320px;
+    height:250px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+	border: 1px solid black;
+}
+
+#about-image img:hover {
+    transform: translateY(-5px); /* Lift the box on hover */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7); /* Add shadow on hover */
+}
+
+
+/*STYLES FOR THE FAQ SECTION*/
+.faq-section {
+  margin: 0 auto;
+  padding: 20px;
+  max-width: 1000px;
+}
+
+.faq-section h2 {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.faq-item {
+  border-bottom:none ;
+}
+
+.faq-question {color: #00265c;
+  width: 100%;
+  background-color: #c0ffff;
+  border: 1px solid #ffe0f6;
+  outline: none;
+  padding: 15px 20px;
+  font-size: 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: left;
+  cursor: pointer;
+  text-align: left;
+  transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition for hover effects */
+
+}
+.faq-question:hover {
+  background-color: #0ff;
+    transform: translateX(15px); /* Lift the box on hover */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7); /* Add shadow on hover */
+}
+
+
+.faq-icon {
+  font-size: 30px;
+  transition: transform 0.3s ease;
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  text-align: left;
+  transition: max-height 0.4s ease;
+  padding: 0 20px;
+  border-left: 3px solid #007bff;
+}
+
+.faq-answer p {
+  margin: 10px 0;
+  font-size: 16px;
+  color: #222020;
+}
+
+.button{
+    display: inline-block;
+      background: #ffffff;
+      border:1px solid #000000;
+      color: #000000;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      transition: background 0.5s ease;
+}
+
+.button:hover {
+      background: #000000;
+      color: #ffffff;}
+
+.faq-question.active .faq-icon {
+  transform:none 
+
+}
+
+.faq-question.active + .faq-answer {
+  max-height: 150px; /* Adjust based on content */
+}
+
+
+        /*FOOTER STYLE*/
+        .footer {
+    background-color:#333;
+    color: rgb(255, 255, 255); /* White text */
+    text-align: center; /* Centered text */
+    padding: 2px; /* Padding for footer */
+    position: relative; /* Ensure footer stays at the bottom */
+	height:fit-content;
+}
+
+.footer-links {
+    margin-bottom: 0px; /* Space below the links */
+}
+
+.footer-links a {
+    color: white; /* Link text color */
+    text-decoration: none; /* Remove underline from links */
+    margin: 0 15px; /* Space between links */
+    transition: color 0.3s; /* Smooth transition for hover effect */
+}
+.footer-links a:hover {
+    color: #007BFF; /* Change color on hover */
+}
+
+#contact-info {
+    text-align: center; /* Center text */
+	color:#fff;
+}
+
+
+
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 30px;
+  color: #007BFF;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 50%;
+}
+.fa:hover {
+    color: #fff; /* Change color on hover */
+}
+
+.contact-details p {
+    font-size: 1.2em; /* Font size for email and phone */
+    color: #fff; /* Darker color for text */
+}
+
+.contact-details a {font-size: 1.1em;
+color: #7beed3;
+text-decoration: none;}
+
+.contact-details a:hover{ color:#007BFF;
+text-decoration: none;}
+
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const menuIcon = document.querySelector(".menu-icon");
+            const navLinks = document.querySelector("nav ul");
+
+            menuIcon.addEventListener("click", () => {
+                navLinks.classList.toggle("active");
+            });
+        });
+    </script>
+</head>
+<body>
+      <!--Advert section-->
+<section id="advert">
+  <p> <b>OFFER!   OFFER!   OFFER!</b><br>
+ Get a <i>FREE</i> website consultation Today. Just Call Me to get answers for your questions!</p>
+</section>
+    <header>
+        <nav>
+            <div><img src="port logo.jpg" class="logo-img"></div><!--logo division-->
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="About Ephraim.html">About</a></li>
+                <li><a href="serviices.html">Services</a></li>
+                <li><a href="portfolio projects.html">Portfolio</a></li>
+                <li><a href="Contact Ephraim.html">Contact</a></li>
+                <li><a href="https://www.ephraimcreations.online/" target="_blank">Visit Ephraim Creations</a></li>
+            </ul>
+            <div class="menu-icon">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </nav>
+    </header>
+
+<!--BODY SECTION-->
+<section id="hero" class="hero">
+    <h2>Creative Solutions for Your Needs</h2>
+    <p>Delivering high-quality web design, development, and digital solutions tailored to your needs.</p>
+    <a href="Contact Ephraim.html">Get in Touch</a>
+  </section>
+
+
+<!--About section-->
+  <section id="about">
+    <h2>About Me</h2>
+    <p>Hello! I'm Ephraim, a passionate web developer and designer with a knack for crafting seamless
+        and elegant digital experiences. Let’s create something amazing together.</p>
+    <div id="about-image">
+        <img src="Eph.jpg" onclick="openFullScreen(this)">
+        <img src="2.png" onclick="openFullScreen(this)">
+        <img src="3.png" onclick="openFullScreen(this)">
+    </div>
+  </section>
+
+
+  <!--portfolio section-->
+  <section id="projects">
+    <h2>Some recent projects</h2>
+    <div class="projects">
+        <div class="project">
+            <img src="ec.jpg" alt="Ephraim Creations" onclick="openFullScreen(this)">
+            <h3>Ephraim Creations</h3>
+            <p>This is my website design agency</p>
+            <div id="project-links">
+            <a href="https://www.ephraimcreations.online/" target="_blank">Go to site</a>
+            </div>
+        </div>    
+        
+        <div class="project">
+            <img src="shop.png" alt="Shop 8(An online store)" onclick="openFullScreen(this)">
+            <h3>Online shop</h3>
+            <p>This is a shop website.Customers buy online</p>
+            <div id="project-links">
+            <a href="https://lileph01.wixsite.com/shop" target="_blank">Go to site</a>
+            </div>
+        </div>     
+        
+        <div class="project">
+            <img src="criticall builders.png" alt="Critical builders" onclick="openFullScreen(this)">
+            <h3>Building store</h3>
+            <p>This is a building store website</p>
+            <div id="project-links">
+            <a href="https://lileph01.wixsite.com/criticalbuilders" target="_blank">Go to site</a>
+            </div>
+        </div>	
+    </div>
+</section>
+
+<section class="faq-section">
+    <h2>Frequently Asked Questions (FAQ)</h2>
+    <div class="faq-item">
+      <button class="faq-question">
+        <span>Which services do you offer?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p> I offer custom website design and Graphic design using latest technologies
+            contact me for your:
+            <ol>
+              <li>logo,</li>
+              <li>poster,</li>
+              <li>flyer,</li>
+              <li>wedding cards,</li>
+              <li>invitation cards</li>
+              <li>magazine/book covers,</li>
+              <li>website (new design),</li>
+              <li>website design (existing website)</li>
+              <li>website consultancy( new & existing websites)</li>
+              <li>website auditing (learn how to better your site)</li>
+
+            </ol>
+I have a team of 5 and we run an agency called <a href="https://www.ephraimcreations.online" target="_blank"  style="text-decoration: none; color:#002fff;">Ephraim creations</a>
+            We offer website design, development, and other digital services tailored to your needs.</p>
+            <a href="https://www.ephraimcreations.online" target="_blank" rel="noopener noreferrer" class="button">Visit Ephraim creations</a>
+            <br>
+            <br>
+      </div>
+    </div>
+  
+
+    <div class="faq-item">
+        <button class="faq-question">
+      <span>How can I order your services?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>You can directly call me or WhatsApp me to talk about your needs via my cellphone number; or 
+            order services from Ephraim Creations.
+          </p>
+          <a href="tel:+254112268873" class="button">📞 Call Now</a> 
+          <a href="https://www.ephraimcreations.online/book-online" target="_blank" rel="noopener noreferrer" class="button">View and order services</a>
+        </div>
+      </div>
+
+
+    <div class="faq-item">
+      <button class="faq-question">
+    <span>How much for a website?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>I dont charge a constant amount of money for your website design. <br>
+          Services charges depend on the complexity of your website or any project;<br>
+          the lesser the content, fucntions and products (in e-commerce) the cheaper the service and vice versa...<br>
+          <br>Compare the website prices suitable for your brand Now at Ephraim Creations.
+        </p>
+        <a href="https://www.ephraimcreations.online/website-pricing" target="_blank" rel="noopener noreferrer" class="button">View & Compare prices</a>
+      </div>
+    </div>
+  
+    <div class="faq-item">
+      <button class="faq-question">
+        <span>How do you work?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <span class="faq-icon"></span>
+        <p>As Ephraim I work individualy but as a <b style="color: #0004ff;">Ephraim Creation</b> we work as a team.<br>
+          <br>
+       <u>Charges</u>
+       <br> 
+       In most cases a client will pay a certain percentage of the agreed amount before starting their
+        project and finalize payment after I deliver their work...
+        <br>
+        <br>
+        <u>Delivery of work</u><br>
+        For the files(e.g. posters and flyers) I share in an agreed format/extension <i style="color: #0004ff;">e.g.PNG, JPG or PDF</i>
+        <br>
+        <br>
+
+        In website Development, I will send the codes<i style="color: #0004ff;"> e.g. HTML or CSS</i>
+        <br>
+        <br>
+        In website Design, I will work using your<i style="color: #0004ff;"> WordPress, Wix or any other CMS</i>
+        </p>
+      </div>
+    </div>
+</section>
+<!--below is the FAQ button function-->
+<script>
+    const faqItems = document.querySelectorAll(".faq-question");
+  
+    faqItems.forEach(item => {
+      item.addEventListener("click", () => {
+        item.classList.toggle("active");
+  
+        const icon = item.querySelector(".faq-icon");
+        icon.textContent = item.classList.contains("active") ? "-" : "+";
+  
+        const answer = item.nextElementSibling;
+        if (item.classList.contains("active")) {
+          answer.style.maxHeight = answer.scrollHeight + "px";
+        } else {
+          answer.style.maxHeight = 0;
+        }
+      });
+    });
+  </script>
+
+
+    <!-- Full Screen Image Container -->
+    <div id="fullScreenImage">
+        <span id="closeBtn" onclick="closeFullScreen()">&#x2716;</span>
+        <img src="" id="fullImg" alt="Fullscreen Image">
+    </div>
+
+    <script>
+        function openFullScreen(image) {
+            document.getElementById("fullImg").src = image.src;
+            document.getElementById("fullScreenImage").style.display = "flex";
+        }
+
+        function closeFullScreen() {
+            document.getElementById("fullScreenImage").style.display = "none";
+        }
+    </script>
+  
+  
+
+
+
+  <!--FOOTER SECTION-->
+  <footer class="footer">
+    <h3>Quick links</h3>
+    <br>
+    <div class="footer-links">
+        <a href="About Ephraim.html">About</a>
+        <a href="serviices.html">services</a>
+        <a href="Contact Ephraim.html">Contact</a>
+        <a href="portfolio projects.html">Portfolio</a>
+    </div>
+  <section id="contact-info">
+<h2>Follow on socials</h2>
+        <!-- Social Media Links with Icons -->
+                <div class="social-media">
+                    <a href="https://www.facebook.com/ephraimmutwiri2024"  target="_blank" class="fa fa-facebook"></a>
+                    <a href="https://www.instagram.com/ephraim_mutwiri?igsh=YzljYTk1ODg3Zg==" target="_blank" class="fa fa-instagram"></a>
+                    <a href="https://www.linkedin.com/in/ephraim-mutwiri-052a58310" target="_blank" class="fa fa-linkedin"></a>
+                    <a href="https://youtube.com/@ephraimcreations01?si=3TZvja8EmGrbCQKV" target="_blank" class="fa fa-youtube"></a>
+                    <a href="" target="_blank" class="fa fa-twitter"></a> 
+                    
+            </div>
+    </section>
+<!--contact details-->
+<h2>Contact Me</h2>
+<p>Feel free to reach out for collaborations or project enquiries.</p>
+<div class="contact-details">
+    <p>Email: <a href="mailto:ephraimmutwiri01@gmail.com">ephraimmutwiri01@gmail.com</a></p>
+    <p>Phone: <a href="tel:+254112268873">+254 112 268 873</a></p>
+    <p>Order Services:<a href="https://www.ephraimcreations.online/book-online">Visit site</a></p>
+</div>
+<br>	
+    <div class="copyright">
+      &copy; 2024-2025 Ephraim Mutwiri.<br>
+       A Website <a href="About Ephraim.html" style="color: #0ff;text-decoration: none;">Designer</a> <br><br><b>Reproduction of content strictly prohibited.</b>
+    </div>
+    <br>
+    <br>
+</footer>
+
+</body>
+</html>
