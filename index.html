@@ -7,11 +7,12 @@
     <title>HOME | Ephraim Mutwiri</title>
     <style>
         /* General Styles */
+        h2{color: #0ff;}
         body {
             margin: 0;
             justify-content: center;
             font-family: Arial, sans-serif;
-            background-color: #ffe0f3;
+            background-color: #111;
 
         }
 
@@ -19,78 +20,101 @@
             background-color: #000000;
             color: white;
             padding: 10px 20px;
+            display: flex;
         }
          
          .logo-img{
-         width:300px;
+         width:275px;
          height: fit-content;
         }
 
-        nav {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
+        .nav {
+    display: flex;
+    gap: 0px;
+    align-items: center;
+}
 
-        nav ul {
-            list-style: none;
-            margin: 0;
-            padding: 10px;
-            display: flex;
-            gap: 15px;
-        }
 
-        nav ul li {
-            margin: 0;
-        }
+.nav-links {
+    position: fixed;
+    top: 0;
+   left: -100%;
+    width: 0px;
+    height: 100vh;
+    background: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: left 0.3s ease;
+    z-index: 1000;
+}
 
-        nav ul li a {
-            text-decoration: none;
-            color: white;
-            padding: 8px 15px;
-            border-radius: 5px;
-        }
+.nav-links.show {
+    left: 0;
+}
 
-        nav ul li a:hover {
-            background-color: #60ffca;
-            color: #000000;
-        }
+.nav-links a {
+    margin: 10px 0;
+}
 
-        /* Hamburger Menu Styles */
-        .menu-icon {
-            display: none;
-            cursor: pointer;
-            font-size: 24px;
-        }
+.nav-links a {
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1rem;
+    border-radius: 15px;
+    background-color: #000000;    border-radius: 15px;
+    transition: color 0.3s;
+}
 
-        .menu-icon div {
-            width: 30px;
-            height: 4px;
-            background-color: white;
-            margin: 5px 0;
-        }
+.nav-links a:hover {
+    background-color: #60ffca;
+    color: #000000;
+}
 
-        /* Mobile Styles */
-        @media (max-width: 768px) {
-            nav ul {
-                display: none;
-                flex-direction: column;
-                background-color: #333;
-                position: absolute;
-                top: 150px;/*When I remove the Advert,, I restore original values*/
-                right: 50px;
-                width:max-content;
-                box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-            }
+.mobile-menu-toggle {
+    float: right;
+    display: none;
+    font-size: 2rem;
+    color: #000000;
+    background-color: #60ffca;
+    padding: 10px 14px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    z-index: 1001;
+}
 
-            nav ul.active {
-                display: flex;
-            }
+@media (max-width: 768px) {
+    .mobile-menu-toggle {
+        display: block;
+    }
 
-            .menu-icon {
-                display: block;
-            }
-        }
+    .nav-links {
+        width: 60%;
+    }
+}
+
+@media (min-width: 769px) {
+    .nav-links {
+        position: static;
+        width: auto;
+        height: auto;
+        background: none;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .nav-links a {
+        margin: 0 1rem;
+    }
+
+    .mobile-menu-toggle {
+        display: none;
+    }
+}
 
 /*STYLE FOR SECTIONS*/
 .hero {
@@ -99,7 +123,7 @@
       background-color: #60ffca;
       color: #000000;
     }
-    .hero h2 {
+    .hero h1 {
       font-size: 3rem;
       margin-bottom: 20px;
     }
@@ -123,17 +147,6 @@
       color: #ffffff;
     }
 
-#advert{
-  background-color: rgb(255, 0, 64);
-  color: #000000;
-  height:35px;
-}
-#advert p{
-  margin-top: 0%;
-  padding: 0%; 
-  margin-bottom: 0%;
-font-size: 16px;
-}
   
 
     /*style for the projects*/
@@ -148,15 +161,15 @@ font-size: 16px;
             gap: 20px;
         }
         .project {
-            background-color: #fff;
-            border: 1px solid #ccc;
+          color: #fff;
+            background-color: #333;
+            border: 0px solid #ccc;
             border-radius: 5px;
             width: 300px;
             padding: 15px;
-            box-shadow: 0 2px 5px #000;
+            box-shadow: 0 1px 8px #ffffff;
         }
         .project:hover {
-      background-color: #0ff;
       transform: translateY(-2px);
       box-shadow: 0 8px 20px #333;
     }
@@ -181,17 +194,17 @@ font-size: 16px;
         #project-links a {
             font-size: 10px;
             text-decoration: none;
-            color: #333;
+            color: #c9ffd9;
             font-size: 1.2rem;
             padding: 10px 20px;
-            border: 1px solid #333;
+            border: 1px solid #f9f9f9;
             border-radius: 5px;
             margin: 0 10px;
             transition: background-color 0.3s ease-in-out;
         }
         #project-links a:hover {
-            background-color: #333;
-            color: #fff;
+            background-color: #60ffaa;
+            color: #000000;
         }
 		
 
@@ -228,6 +241,7 @@ font-size: 16px;
 #about{
     justify-content: center;
     text-align: center;
+    color: #fff;
   }
 
   #about p{
@@ -276,10 +290,10 @@ font-size: 16px;
   border-bottom:none ;
 }
 
-.faq-question {color: #00265c;
+.faq-question {color: #60ffaa;
   width: 100%;
-  background-color: #c0ffff;
-  border: 1px solid #ffe0f6;
+  background-color: #333;
+  border: 0px solid #ffe0f6;
   outline: none;
   padding: 15px 20px;
   font-size: 18px;
@@ -292,8 +306,9 @@ font-size: 16px;
 
 }
 .faq-question:hover {
-  background-color: #0ff;
-    transform: translateX(15px); /* Lift the box on hover */
+  color: #000000;
+  background-color: rgb(4, 166, 139);
+    transform: translateX(5px); /* Lift the box on hover */
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7); /* Add shadow on hover */
 }
 
@@ -315,9 +330,9 @@ font-size: 16px;
 .faq-answer p {
   margin: 10px 0;
   font-size: 16px;
-  color: #222020;
+  color: #ffffff;
 }
-
+.faq-answer ol{color: #fff;}
 .button{
     display: inline-block;
       background: #ffffff;
@@ -330,7 +345,7 @@ font-size: 16px;
 }
 
 .button:hover {
-      background: #000000;
+      background: #464646;
       color: #ffffff;}
 
 .faq-question.active .faq-icon {
@@ -345,10 +360,10 @@ font-size: 16px;
 
         /*FOOTER STYLE*/
         .footer {
-    background-color:#333;
+    background-color:#000000;
     color: rgb(255, 255, 255); /* White text */
     text-align: center; /* Centered text */
-    padding: 2px; /* Padding for footer */
+    padding: 7px; /* Padding for footer */
     position: relative; /* Ensure footer stays at the bottom */
 	height:fit-content;
 }
@@ -374,17 +389,33 @@ font-size: 16px;
 
 
 
+.social-media {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+
 .fa {
-  padding: 20px;
-  font-size: 30px;
-  width: 30px;
-  color: #007BFF;
-  text-align: center;
-  text-decoration: none;
-  border-radius: 50%;
+            color: #000000;
+            font-size: 20px;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #0ff;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
 }
 .fa:hover {
-    color: #fff; /* Change color on hover */
+            background: #002fff;
+            color: #000000;
+            transform: scale(1.2);
+
 }
 
 .contact-details p {
@@ -400,45 +431,45 @@ text-decoration: none;}
 text-decoration: none;}
 
     </style>
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const menuIcon = document.querySelector(".menu-icon");
-            const navLinks = document.querySelector("nav ul");
-
-            menuIcon.addEventListener("click", () => {
-                navLinks.classList.toggle("active");
-            });
-        });
-    </script>
 </head>
 <body>
-      <!--Advert section-->
-<section id="advert">
-  <p> <b>OFFER!   OFFER!   OFFER!</b><br>
- Get a <i>FREE</i> website consultation Today. Just Call Me to get answers for your questions!</p>
-</section>
+
     <header>
-        <nav>
-            <div><img src="port logo.jpg" class="logo-img"></div><!--logo division-->
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="About Ephraim.html">About</a></li>
-                <li><a href="serviices.html">Services</a></li>
-                <li><a href="portfolio projects.html">Portfolio</a></li>
-                <li><a href="Contact Ephraim.html">Contact</a></li>
-                <li><a href="https://www.ephraimcreations.online/" target="_blank">Visit Ephraim Creations</a></li>
-            </ul>
-            <div class="menu-icon">
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
-        </nav>
-    </header>
+      <nav class="nav">
+        <div>           
+          <a href="Contact Ephraim.html">
+              <img src="New logo.jpg" class="logo-img">
+          </a>
+      </div><!--logo division-->
+        <button class="mobile-menu-toggle" id="menuToggle">☰</button>
+          <div class="nav-links" id="navLinks">
+            <a href="index.html">Home</a>
+            <a href="About Ephraim.html">About</a>
+            <a href="serviices.html">Services</a>
+            <a href="portfolio projects.html">Portfolio</a>
+            <a href="Contact Ephraim.html">Contact</a>
+            <a href="https://www.ephraimcreations.online/" target="_blank">Visit Ephraim Creations</a>
+          </div>
+      </nav>
+      </header>
+      <script>
+          const menuToggle = document.getElementById('menuToggle');
+          const navLinks = document.getElementById('navLinks');
+  
+          menuToggle.addEventListener('click', () => {
+              navLinks.classList.toggle('show');
+              if (navLinks.classList.toggle('active')) {
+                  menuToggle.textContent = 'x';
+              } else {
+                  menuToggle.textContent = '☰';
+              }
+          });
+      </script>
+
 
 <!--BODY SECTION-->
 <section id="hero" class="hero">
-    <h2>Creative Solutions for Your Needs</h2>
+    <h1>Creative Solutions for Your Needs</h1>
     <p>Delivering high-quality web design, development, and digital solutions tailored to your needs.</p>
     <a href="Contact Ephraim.html">Get in Touch</a>
   </section>
@@ -499,7 +530,7 @@ text-decoration: none;}
       </button>
       <div class="faq-answer">
         <p> I offer custom website design and Graphic design using latest technologies
-            contact me for your:
+            contact me for your: </p>
             <ol>
               <li>logo</li>
               <li>poster</li>
@@ -511,8 +542,8 @@ text-decoration: none;}
               <li>website design (existing website)</li>
               <li>website consultancy( new & existing websites)</li>
               <li>website auditing (learn how to better your site)</li>
-
             </ol>
+            <p>
 I have a team of 5 and we run an agency called <a href="https://www.ephraimcreations.online" target="_blank"  style="text-decoration: none; color:#002fff;">Ephraim creations</a>
             We offer website design, development, and other digital services tailored to your needs.</p>
             <a href="https://www.ephraimcreations.online" target="_blank" rel="noopener noreferrer" class="button">Visit Ephraim creations</a>
@@ -625,16 +656,8 @@ I have a team of 5 and we run an agency called <a href="https://www.ephraimcreat
 
   <!--FOOTER SECTION-->
   <footer class="footer">
-    <h3>Quick links</h3>
-    <br>
-    <div class="footer-links">
-        <a href="About Ephraim.html">About</a>
-        <a href="serviices.html">services</a>
-        <a href="Contact Ephraim.html">Contact</a>
-        <a href="portfolio projects.html">Portfolio</a>
-    </div>
   <section id="contact-info">
-<h2>Follow on socials</h2>
+<h2>On socials</h2>
         <!-- Social Media Links with Icons -->
                 <div class="social-media">
                     <a href="https://www.facebook.com/ephraimmutwiri2024"  target="_blank" class="fa fa-facebook"></a>
@@ -656,9 +679,9 @@ I have a team of 5 and we run an agency called <a href="https://www.ephraimcreat
 <br>	
     <div class="copyright">
       &copy; 2024-2025 Ephraim Mutwiri.<br>
-       A Website <a href="About Ephraim.html" style="color: #0ff;text-decoration: none;">Designer</a> <br><br><b>Reproduction of content strictly prohibited.</b>
+       A Website <a href="About Ephraim.html" style="color: #0ff;text-decoration: none;">Designer</a>
+        <br><br><b>Reproduction of content strictly prohibited.</b>
     </div>
-    <br>
     <br>
 </footer>
 
