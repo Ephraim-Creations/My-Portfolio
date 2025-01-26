@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <!-- Other head elements like title and link to CSS it (links to social accounts) -->
 	
     <meta charset="UTF-8">
@@ -15,7 +15,7 @@ body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #e8d9d9;
+            background-color: #111;
         }
 
         
@@ -23,81 +23,104 @@ body {
             background-color: #000000;
             color: white;
             padding: 10px 20px;
+            display: flex;
         }
          
-        .logo-img{
-         width:300px;
+         .logo-img{
+         width:275px;
          height: fit-content;
         }
 
-        nav {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        nav ul {
-            list-style: none;
-            margin: 0;
-            padding: 10px;
-            display: flex;
-            gap: 15px;
-        }
-
-        nav ul li {
-            margin: 0;
-        }
-
-        nav ul li a {
-            text-decoration: none;
-            color: white;
-            padding: 8px 15px;
-            border-radius: 5px;
-        }
-
-        nav ul li a:hover {
-            background-color: #60ffca;
-            color: #000000;
-        }
-
-        /* Hamburger Menu Styles */
-        .menu-icon {
-            display: none;
-            cursor: pointer;
-            font-size: 24px;
-        }
-
-        .menu-icon div {
-            width: 30px;
-            height: 4px;
-            background-color: white;
-            margin: 5px 0;
-        }
-
-        /* Mobile Styles */
-        @media (max-width: 768px) {
-            nav ul {
-                display: none;
-                flex-direction: column;
-                background-color: #333;
-                position: absolute;
-                top: 75px;
-                right: 20px;
-                width:max-content;
-                box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-            }
+        .nav {
+    display: flex;
+    gap: 0px;
+    align-items: center;
+}
 
 
-            nav ul.active {
-                display: flex;
-            }
+.nav-links {
+    position: fixed;
+    top: 0;
+   left: -100%;
+    width: 0px;
+    height: 100vh;
+    background: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: left 0.3s ease;
+    z-index: 1000;
+}
 
-            .menu-icon {
-                display: block;
-            }
-        }
+.nav-links.show {
+    left: 0;
+}
+
+.nav-links a {
+    margin: 10px 0;
+}
+
+.nav-links a {
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1rem;
+    border-radius: 15px;
+    background-color: #000000;    border-radius: 15px;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    background-color: #0ff;
+    color: #000000;
+}
+
+.mobile-menu-toggle {
+    float: right;
+    display: none;
+    font-size: 2rem;
+    color: #000000;
+    background-color: #0ff;
+    padding: 10px 14px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+@media (max-width: 768px) {
+    .mobile-menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        width: 60%;
+    }
+}
+
+@media (min-width: 769px) {
+    .nav-links {
+        position: static;
+        width: auto;
+        height: auto;
+        background: none;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .nav-links a {
+        margin: 0 1rem;
+    }
+
+    .mobile-menu-toggle {
+        display: none;
+    }
+}
+
 #about{
-    background-color: #60ffca;
+    background-color: #0ff;
 width: fill;
 height: fit-content;
 padding: 20px;
@@ -109,15 +132,13 @@ padding: 20px;
     margin: 20px; /* Center the form on the page */
     padding: 20px; /* Padding inside the form */
     border-radius: 15px; /* Rounded corners */
-    background-color: #f9f9f9; /* Light background color */
+    background-color: #333; /* Light background color */
   transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition for hover effects */
-
 }
 
 #contact:hover {
-    background-color:#7fffd4;
-    transform:translateY(7px); /* Lift the box on hover */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7); /* Add shadow on hover */
+    box-shadow: 0 0px 10px #0ff;
+    transform:scale(1.02); /* Lift the box on hover */
 }
 
 
@@ -130,42 +151,26 @@ label {
     margin-bottom: 5px; /* Space below labels */
 
 }
-input{
-    width: 95%; /* Full width for inputs */
-    padding: 10px; /* Padding inside inputs */
-    border: 1px solid #ccc; /* Light border */
-    border-radius: 5px; /* Rounded corners */
-    transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition for hover effects */
-
-}
-input:hover{
-    background-color: #7fffd4;
-    transform:translateY(7px); /* Lift the box on hover */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7); /* Add shadow on hover */
-}
 
 input[type="email"],
 textarea {
+    color: #0ff;
+    background-color: #222;
     width: 95%; /* Full width for inputs */
     padding: 10px; /* Padding inside inputs */
     border: 1px solid #ccc; /* Light border */
     border-radius: 5px; /* Rounded corners */
-    transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition for hover effects */
 
 }
 
-textarea:hover{
-    background-color: #7fffd4;
-    transform:translateY(7px); /* Lift the box on hover */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7); /* Add shadow on hover */
-}
+
 
 .form-actions {
     display: flex; /* Flexbox for button layout */
     justify-content: space-between; /* Space between buttons */
 }
 
-button {
+#submit {
     padding: 10px 20px; /* Padding for buttons */
     border: none; /* Remove border */
     border-radius: 5px; /* Rounded corners */
@@ -173,17 +178,22 @@ button {
     color: white; /* White text */
     cursor: pointer; /* Pointer on hover */
 }
-button:hover{
-    background-color: #07d611;
-    color: #000000;
+#submit:hover{
+    background-color: #024305;
+    color: #ffffff;
 }
 
 
 button[type="reset"] {
-    background-color: #b61b0f; /* Red background for reset */
+    padding: 10px 20px; /* Padding for buttons */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    background-color: rgb(255, 0, 0); /* Green background */
+    color: white; /* White text */
+    cursor: pointer; /* Pointer on hover */
 }
 button[type="reset"]:hover{
-    background-color: #ff3300;
+    background-color: #830303;
     color: #fff;
 }
 
@@ -191,10 +201,10 @@ button[type="reset"]:hover{
 
 /*FOOTER STYLE*/
 .footer {
-    background-color:#333;
+    background-color:#000000;
     color: rgb(255, 255, 255); /* White text */
     text-align: center; /* Centered text */
-    padding: 2px; /* Padding for footer */
+    padding: 7px; /* Padding for footer */
     position: relative; /* Ensure footer stays at the bottom */
 	height:fit-content;
 }
@@ -220,18 +230,45 @@ button[type="reset"]:hover{
 
 
 
-.fa {
-  padding: 20px;
-  font-size: 30px;
-  width: 30px;
-  color: #007BFF;
-  text-align: center;
-  text-decoration: none;
-  border-radius: 50%;
-}
-.fa:hover {
-    color: #fff; /* Change color on hover */
-}
+.social-icons { justify-content: center;
+      display: flex;
+      gap: 15px;
+    }
+    .social-icons a {
+      text-decoration: none;
+      color: white;
+      width: 50px;
+      height: 50px;
+      font-size: 1.8rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      border: 1px solid #fff;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .social-icons a:hover {
+      transform: scale(1.2);
+      box-shadow: 0 0px 40px #0ff;
+    }
+    .social-icons a.facebook {
+      background-color: #4267B2;
+    }
+    .social-icons a.twitter {
+      background-color: #1DA1F2;
+    }
+    .social-icons a.instagram {
+      background: radial-gradient(circle at 30% 30%, #fdf497, #fd5949, #d6249f, #285AEB);
+    }
+    .social-icons a.linkedin {
+      background-color: #0077B5;
+    }
+    .social-icons a.youtube {
+      background-color: #FF0000;
+    }
+    .social-icons a.tiktok {
+      background-color: #222;
+    }
 
 .contact-details p {
     font-size: 1.2em; /* Font size for email and phone */
@@ -239,7 +276,7 @@ button[type="reset"]:hover{
 }
 
 .contact-details a {font-size: 1.1em;
-color: #7beed3;
+color: #0ff;
 text-decoration: none;}
 
 .contact-details a:hover{ color:#007BFF;
@@ -247,38 +284,42 @@ text-decoration: none;}
 
 
 </style>
-			
-<script>
-    document.addEventListener("DOMContentLoaded", () => {
-        const menuIcon = document.querySelector(".menu-icon");
-        const navLinks = document.querySelector("nav ul");
 
-        menuIcon.addEventListener("click", () => {
-            navLinks.classList.toggle("active");
-        });
-    });
-</script>
 </head>
 
 <body>
+    <header>
+        <nav class="nav">
+          <div>           
+            <a href="Contact Ephraim.html">
+                <img src="New logo.jpg" class="logo-img">
+            </a>
+        </div><!--logo division-->
 
-<header>
-    <nav>
-        <div><img src="port logo.jpg" class="logo-img"></div><!--logo division-->
-        <ul>
-            <li><a href="index.html">Home</a></li>            <li><a href="About Ephraim.html">About</a></li>
-            <li><a href="serviices.html">Services</a></li>
-            <li><a href="portfolio projects.html">Portfolio</a></li>
-            <li><a href="Contact Ephraim.html">Contact</a></li>
-            <li><a href="https://www.ephraimcreations.online/" target="_blank">Visit Ephraim Creations</a></li>
-        </ul>
-        <div class="menu-icon">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-    </nav>
-</header>
+            <button class="mobile-menu-toggle" id="menuToggle">☰</button>
+            <div class="nav-links" id="navLinks">
+              <a href="index.html">Home</a>
+              <a href="About Ephraim.html">About</a>
+              <a href="serviices.html">Services</a>
+              <a href="portfolio projects.html">Portfolio</a>
+              <a href="Contact Ephraim.html">Contact</a>
+              <a href="https://www.ephraimcreations.online/" target="_blank">Visit Ephraim Creations</a>
+            </div>
+        </nav>
+        </header>
+        <script>
+            const menuToggle = document.getElementById('menuToggle');
+            const navLinks = document.getElementById('navLinks');
+    
+            menuToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('show');
+                if (navLinks.classList.toggle('active')) {
+                    menuToggle.textContent = 'x';
+                } else {
+                    menuToggle.textContent = '☰';
+                }
+            });
+        </script>
 <main>
       <center><section id="about">
 	 <h2>Contact Me for Your Website Design Needs!</h2>
@@ -288,7 +329,7 @@ text-decoration: none;}
       <b> Let’s turn your vision into reality!</b> Feel free to reach out for a free consultation or to discuss your project ideas.<br>
         I look forward to working with you...
 	  </section>
-	  
+	
 <section id="contact">
     <h2>Contact Me</h2>
     <form id="contactForm" action="mailto:ephraimmutwiri01@gmail.com" method="post" enctype="text/plain">
@@ -302,53 +343,45 @@ text-decoration: none;}
             <textarea id="message" name="message" rows="5" required placeholder="Your message here. You can start with your number"></textarea>
         </div>
         <div class="form-actions">
-            <button type="submit">Submit</button>
-            <button type="reset">Reset</button>
+            <button type="submit" id="submit">Submit</button>
+            <button type="reset" id="reset">Reset</button>
         </div>
     </form>
 </section>
-</center>
+  </center>
  <script src="contact Ephraim.js"></script>
 
 
   <!--FOOTER SECTION-->
   <footer class="footer">
-    <h3>Quick links</h3>
-    <br>
-    <div class="footer-links">
-        <a href="About Ephraim.html">About</a>
-        <a href="serviices.html">services</a>
-        <a href="Contact Ephraim.html">Contact</a>
-        <a href="portfolio projects.html">Portfolio</a>
-    </div>
-        <section id="contact-info">
-<h2>Follow on socials</h2>
-        <!-- Social Media Links with Icons -->
-                <div class="social-media">
-                    <a href="https://www.facebook.com/ephraimmutwiri2024"  target="_blank" class="fa fa-facebook"></a>
-                    <a href="https://www.instagram.com/ephraim_mutwiri?igsh=YzljYTk1ODg3Zg==" target="_blank" class="fa fa-instagram"></a>
-                    <a href="https://www.linkedin.com/in/ephraim-mutwiri-052a58310" target="_blank" class="fa fa-linkedin"></a>
-                    <a href="https://youtube.com/@ephraimcreations01?si=3TZvja8EmGrbCQKV" target="_blank" class="fa fa-youtube"></a>
-                    <a href="" target="_blank" class="fa fa-twitter"></a> 
-                    
-            </div>
-    </section>
-<!--contact details-->
-<h2>Contact Me</h2>
-<p>Feel free to reach out for collaborations or project enquiries.</p>
-<div class="contact-details">
-    <p>Email: <a href="mailto:ephraimmutwiri01@gmail.com">ephraimmutwiri01@gmail.com</a></p>
-    <p>Phone: <a href="tel:+254112268873">+254 112 268 873</a></p>
-    <p>Order Services:<a href="https://www.ephraimcreations.online/book-online">Visit site</a></p>
-</div>
-<br>	
-<div class="copyright">
-    &copy; 2024-2025 Ephraim Mutwiri.<br>
-     A Website <a href="About Ephraim.html" style="color: #0ff;text-decoration: none;">Designer</a> <br><br><b>Reproduction of content strictly prohibited.</b>
+    <section id="contact-info">
+  <h2>On socials</h2>
+          <!-- Social Media Links with Icons -->
+          <div class="social-icons">
+            <a href="https://www.facebook.com/ephraimmutwiri2025" class="facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://x.com/EphCreations01?t=zHqV3vQCjt_E6t3On6u7FQ&s=09" class="twitter" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com/ephraim_mutwiri?igsh=MTdvZWgyMWV4OXk4Mw==" class="instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/ephraim-mutwiri-052a58310" class="linkedin" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://youtube.com/@ephraimcreations01?si=mZsgAGJPnOhzj7_c" class="youtube" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.tiktok.com/@ephraim_creations?_t=ZM-8tOPnIxJHsM&_r=1" class="tiktok" target="_blank"><i class="fab fa-tiktok"></i></a>
+          </div>
+      </section>
+  <!--contact details-->
+  <h2>Contact Me</h2>
+  <p>Feel free to reach out for collaborations or project enquiries.</p>
+  <div class="contact-details">
+      <p>Email: <a href="mailto:ephraimmutwiri01@gmail.com">ephraimmutwiri01@gmail.com</a></p>
+      <p>Phone: <a href="tel:+254112268873">+254 112 268 873</a></p>
+      <p>Order Services:<a href="https://www.ephraimcreations.online/book-online">Visit site</a></p>
   </div>
-    <br>
-    <br>
-</footer>
+  <br>	
+      <div class="copyright">
+        &copy; 2024-2025 Ephraim Mutwiri.<br>
+         A Website <a href="About Ephraim.html" style="color: #0ff;text-decoration: none;">Designer</a>
+          <br><br><b>Reproduction of content strictly prohibited.</b>
+      </div>
+      <br>
+  </footer>
 
 	<script>
 	document.getElementById("contactForm").addEventListener("submit", function(event) {
