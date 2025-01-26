@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <!-- Other head elements like title and link to CSS it (links to social accounts) -->
 
     <meta charset="utf-8">
@@ -76,7 +76,7 @@ body {
 }
 
 .nav-links a:hover {
-    background-color: #60ffca;
+    background-color: #0ff;
     color: #000000;
 }
 
@@ -85,7 +85,7 @@ body {
     display: none;
     font-size: 2rem;
     color: #000000;
-    background-color: #60ffca;
+    background-color: #0ff;
     padding: 10px 14px;
     border: none;
     border-radius: 10px;
@@ -128,7 +128,7 @@ main {
  padding: 30px;
 }
 	
-#about{background-color: #60ffca;
+#about{background-color: #0ff;
 width: fill;
 height: fit-content;
 padding: 20px;
@@ -310,7 +310,7 @@ margin: 4px;
         }
 
         .review-item:hover {
-            background-color: #03cbbb;
+            background-color: #0ff;
     transform:scale(1.04); /*zoom box on hover */
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7); /* Add shadow on hover */
 }
@@ -363,34 +363,45 @@ margin: 4px;
 
 
 
-.social-media {
-            margin-top: 30px;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-
-
-.fa {
-            color: #000000;
-            font-size: 20px;
-            width: 50px;
-            height: 50px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: #0ff;
-            border-radius: 50%;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-
-}
-.fa:hover {
-            background: #002fff;
-            color: #000000;
-            transform: scale(1.2);
-
-}
+.social-icons { justify-content: center;
+      display: flex;
+      gap: 15px;
+    }
+    .social-icons a {
+      text-decoration: none;
+      color: white;
+      width: 50px;
+      height: 50px;
+      font-size: 1.8rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      border: 1px solid #fff;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .social-icons a:hover {
+      transform: scale(1.2);
+      box-shadow: 0 0px 40px #0ff;
+    }
+    .social-icons a.facebook {
+      background-color: #4267B2;
+    }
+    .social-icons a.twitter {
+      background-color: #1DA1F2;
+    }
+    .social-icons a.instagram {
+      background: radial-gradient(circle at 30% 30%, #fdf497, #fd5949, #d6249f, #285AEB);
+    }
+    .social-icons a.linkedin {
+      background-color: #0077B5;
+    }
+    .social-icons a.youtube {
+      background-color: #FF0000;
+    }
+    .social-icons a.tiktok {
+      background-color: #222;
+    }
 
 .contact-details p {
     font-size: 1.2em; /* Font size for email and phone */
@@ -398,7 +409,7 @@ margin: 4px;
 }
 
 .contact-details a {font-size: 1.1em;
-color: #7beed3;
+color: #0ff;
 text-decoration: none;}
 
 .contact-details a:hover{ color:#007BFF;
@@ -622,14 +633,15 @@ text-decoration: none;}
   <section id="contact-info">
     <h2>On socials</h2>
             <!-- Social Media Links with Icons -->
-                    <div class="social-media">
-                        <a href="https://www.facebook.com/ephraimmutwiri2024"  target="_blank" class="fa fa-facebook"></a>
-                        <a href="https://www.instagram.com/ephraim_mutwiri?igsh=YzljYTk1ODg3Zg==" target="_blank" class="fa fa-instagram"></a>
-                        <a href="https://www.linkedin.com/in/ephraim-mutwiri-052a58310" target="_blank" class="fa fa-linkedin"></a>
-                        <a href="https://youtube.com/@ephraimcreations01?si=3TZvja8EmGrbCQKV" target="_blank" class="fa fa-youtube"></a>
-                        <a href="" target="_blank" class="fa fa-twitter"></a> 
-                        
-                </div>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/ephraimmutwiri2025" class="facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://x.com/EphCreations01?t=zHqV3vQCjt_E6t3On6u7FQ&s=09" class="twitter" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com/ephraim_mutwiri?igsh=MTdvZWgyMWV4OXk4Mw==" class="instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/ephraim-mutwiri-052a58310" class="linkedin" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://youtube.com/@ephraimcreations01?si=mZsgAGJPnOhzj7_c" class="youtube" target="_blank"><i class="fab fa-youtube"></i></a>
+                <a href="https://www.tiktok.com/@ephraim_creations?_t=ZM-8tOPnIxJHsM&_r=1" class="tiktok" target="_blank"><i class="fab fa-tiktok"></i></a>
+              </div>
+       
         </section>
     <!--contact details-->
     <h2>Contact Me</h2>
