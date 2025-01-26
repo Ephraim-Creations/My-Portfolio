@@ -9,94 +9,117 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PORTFOLIO | Ephraim Mutwiri</title>
     <style>
+        h2{color: #0ff;}
 
         /* General Styles */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #ffe0f3;
+            background-color: #111;
         }
 
-        
         header {
             background-color: #000000;
             color: white;
             padding: 10px 20px;
+            display: flex;
         }
          
          .logo-img{
-         width:300px;
+         width:275px;
          height: fit-content;
         }
 
-        nav {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        nav ul {
-            list-style: none;
-            margin: 0;
-            padding: 10px;
-            display: flex;
-            gap: 15px;
-        }
-
-        nav ul li {
-            margin: 0;
-        }
-
-        nav ul li a {
-            text-decoration: none;
-            color: white;
-            padding: 8px 15px;
-            border-radius: 5px;
-        }
-
-        nav ul li a:hover {
-            background-color: #60ffca;
-            color: #000000;
-        }
-
-        /* Hamburger Menu Styles */
-        .menu-icon {
-            display: none;
-            cursor: pointer;
-            font-size: 24px;
-        }
-        .menu-icon div {
-            width: 30px;
-            height: 4px;
-            background-color: white;
-            margin: 5px 0;
-        }
-
-        /* Mobile Styles */
-        @media (max-width: 768px) {
-            nav ul {
-                display: none;
-                flex-direction: column;
-                background-color: #333;
-                position: absolute;
-                top: 75px;
-                right: 20px;
-                width:max-content;
-                box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-            }
+        .nav {
+    display: flex;
+    gap: 0px;
+    align-items: center;
+}
 
 
-            nav ul.active {
-                display: flex;
-            }
+.nav-links {
+    position: fixed;
+    top: 0;
+   left: -100%;
+    width: 0px;
+    height: 100vh;
+    background: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: left 0.3s ease;
+    z-index: 1000;
+}
 
-            .menu-icon {
-                display: block;
-            }
-        }
+.nav-links.show {
+    left: 0;
+}
+
+.nav-links a {
+    margin: 10px 0;
+}
+
+.nav-links a {
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1rem;
+    border-radius: 15px;
+    background-color: #000000;    border-radius: 15px;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    background-color: #60ffca;
+    color: #000000;
+}
+
+.mobile-menu-toggle {
+    float: right;
+    display: none;
+    font-size: 2rem;
+    color: #000000;
+    background-color: #60ffca;
+    padding: 10px 14px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+@media (max-width: 768px) {
+    .mobile-menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        width: 60%;
+    }
+}
+
+@media (min-width: 769px) {
+    .nav-links {
+        position: static;
+        width: auto;
+        height: auto;
+        background: none;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .nav-links a {
+        margin: 0 1rem;
+    }
+
+    .mobile-menu-toggle {
+        display: none;
+    }
+}
 		
-#projects  {
+        section {
             padding: 20px;
             text-align: center;
         }
@@ -107,24 +130,20 @@
             gap: 20px;
         }
         .project {
-            background-color: #fff;
-            border: 1px solid #ccc;
+          color: #fff;
+            background-color: #333;
+            border: 0px solid #ccc;
             border-radius: 5px;
-            width: 360px;
-            height:330px;
+            width: 300px;
             padding: 15px;
-            box-shadow: 0 2px 5px #000;
+            box-shadow: 0 1px 8px #ffffff;
         }
         .project:hover {
-            background-color: #71ffff;
-         transform: translateY(-10px); /* Lift the box on hover */
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7); /* Add shadow on hover */
-        }
-
-
-
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px #333;
+    }
         .project img {
-            width: 90%;
+            width: 100%;
             border-radius: 5px;
 	        height: auto;
             cursor: pointer;
@@ -132,10 +151,11 @@
 			border: 1px solid black;
         }
 		
-		.project img:hover {
-            transform:translateY(5px);
+        .project img:hover {
+            transform:translateY(2px);
         }
-		
+
+
        #project-links {
             text-align: center;
             margin-top: 20px;
@@ -143,17 +163,17 @@
         #project-links a {
             font-size: 10px;
             text-decoration: none;
-            color: #333;
+            color: #c9ffd9;
             font-size: 1.2rem;
             padding: 10px 20px;
-            border: 1px solid #333;
+            border: 1px solid #f9f9f9;
             border-radius: 5px;
             margin: 0 10px;
             transition: background-color 0.3s ease-in-out;
         }
         #project-links a:hover {
-            background-color: #333;
-            color: #fff;
+            background-color: #60ffaa;
+            color: #000000;
         }
 		
 
@@ -187,10 +207,10 @@
 		
 /*FOOTER STYLE*/
 .footer {
-    background-color:#333;
+    background-color:#000000;
     color: rgb(255, 255, 255); /* White text */
     text-align: center; /* Centered text */
-    padding: 2px; /* Padding for footer */
+    padding: 7px; /* Padding for footer */
     position: relative; /* Ensure footer stays at the bottom */
 	height:fit-content;
 }
@@ -216,17 +236,33 @@
 
 
 
+.social-media {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+
 .fa {
-  padding: 20px;
-  font-size: 30px;
-  width: 30px;
-  color: #007BFF;
-  text-align: center;
-  text-decoration: none;
-  border-radius: 50%;
+            color: #000000;
+            font-size: 20px;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #0ff;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
 }
 .fa:hover {
-    color: #fff; /* Change color on hover */
+            background: #002fff;
+            color: #000000;
+            transform: scale(1.2);
+
 }
 
 .contact-details p {
@@ -242,39 +278,42 @@ text-decoration: none;}
 text-decoration: none;}
 
 
-
     </style>
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const menuIcon = document.querySelector(".menu-icon");
-            const navLinks = document.querySelector("nav ul");
-
-            menuIcon.addEventListener("click", () => {
-                navLinks.classList.toggle("active");
-            });
-        });
-    </script>
+  
 </head>
 <body>
     <header>
-        <nav>
-            <div><img src="port logo.jpg" class="logo-img"></div><!--logo division-->
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="About Ephraim.html">About</a></li>
-                <li><a href="serviices.html">Services</a></li>
-                <li><a href="portfolio projects.html">Portfolio</a></li>
-                <li><a href="Contact Ephraim.html">Contact</a></li>
-                <li><a href="https://www.ephraimcreations.online/" target="_blank">Visit Ephraim Creations</a></li>
-            </ul>
-            <div class="menu-icon">
-                <div></div>
-                <div></div>
-                <div></div>
+        <nav class="nav">
+            <div>           
+                <a href="Contact Ephraim.html">
+                    <img src="New logo.jpg" class="logo-img">
+                </a>
+            </div><!--logo division-->
+            <button class="mobile-menu-toggle" id="menuToggle">☰</button>
+            <div class="nav-links" id="navLinks">
+              <a href="index.html">Home</a>
+              <a href="About Ephraim.html">About</a>
+              <a href="serviices.html">Services</a>
+              <a href="portfolio projects.html">Portfolio</a>
+              <a href="Contact Ephraim.html">Contact</a>
+              <a href="https://www.ephraimcreations.online/" target="_blank">Visit Ephraim Creations</a>
             </div>
         </nav>
-    </header>
-
+        </header>
+        <script>
+            const menuToggle = document.getElementById('menuToggle');
+            const navLinks = document.getElementById('navLinks');
+    
+            menuToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('show');
+                if (navLinks.classList.toggle('active')) {
+                    menuToggle.textContent = 'x';
+                } else {
+                    menuToggle.textContent = '☰';
+                }
+            });
+        </script>
+  
     <!-- Header -->
 
 
@@ -282,7 +321,7 @@ text-decoration: none;}
 	<!--The fist layer of portfolio-->
     <section id="projects">
         <h2>My recent projects</h2>
-        <p><i>click image to view fullscreen</i></p>
+        <p><i style="color: #ccc;">click image to view fullscreen</i></p>
         <br>
         <br>
         <div class="projects">
@@ -398,42 +437,34 @@ text-decoration: none;}
     </div>
 
     <footer class="footer">
-        <h3>Quick links</h3>
-        <br>
-        <div class="footer-links">
-            <a href="About Ephraim.html">About</a>
-            <a href="serviices.html">services</a>
-            <a href="Contact Ephraim.html">Contact</a>
-            <a href="portfolio projects.html">Portfolio</a>
-        </div>
-			<section id="contact-info">
-    <h2>Follow on socials</h2>
-            <!-- Social Media Links with Icons -->
-                    <div class="social-media">
-                        <a href="https://www.facebook.com/ephraimmutwiri2024"  target="_blank" class="fa fa-facebook"></a>
-                        <a href="https://www.instagram.com/ephraim_mutwiri?igsh=YzljYTk1ODg3Zg==" target="_blank" class="fa fa-instagram"></a>
-                        <a href="https://www.linkedin.com/in/ephraim-mutwiri-052a58310" target="_blank" class="fa fa-linkedin"></a>
-                        <a href="https://youtube.com/@ephraimcreations01?si=3TZvja8EmGrbCQKV" target="_blank" class="fa fa-youtube"></a>
-                        <a href="" target="_blank" class="fa fa-twitter"></a> 
-                        
-                </div>
-        </section>
-    <!--contact details-->
-    <h2>Contact Me</h2>
-    <p>Feel free to reach out for collaborations or project enquiries.</p>
-    <div class="contact-details">
-        <p>Email: <a href="mailto:ephraimmutwiri01@gmail.com">ephraimmutwiri01@gmail.com</a></p>
-        <p>Phone: <a href="tel:+254112268873">+254 112 268 873</a></p>
-        <p>Order Services:<a href="https://www.ephraimcreations.online/book-online">Visit site</a></p>
-    </div>
-<br>	
-<div class="copyright">
-    &copy; 2024-2025 Ephraim Mutwiri.<br>
-     A Website <a href="About Ephraim.html" style="color: #0ff;text-decoration: none;">Designer</a> <br><br><b>Reproduction of content strictly prohibited.</b>
-  </div>
-        <br>
-        <br>
-    </footer>
+        <section id="contact-info">
+      <h2>On socials</h2>
+              <!-- Social Media Links with Icons -->
+                      <div class="social-media">
+                          <a href="https://www.facebook.com/ephraimmutwiri2024"  target="_blank" class="fa fa-facebook"></a>
+                          <a href="https://www.instagram.com/ephraim_mutwiri?igsh=YzljYTk1ODg3Zg==" target="_blank" class="fa fa-instagram"></a>
+                          <a href="https://www.linkedin.com/in/ephraim-mutwiri-052a58310" target="_blank" class="fa fa-linkedin"></a>
+                          <a href="https://youtube.com/@ephraimcreations01?si=3TZvja8EmGrbCQKV" target="_blank" class="fa fa-youtube"></a>
+                          <a href="" target="_blank" class="fa fa-twitter"></a> 
+                          
+                  </div>
+          </section>
+      <!--contact details-->
+      <h2>Contact Me</h2>
+      <p>Feel free to reach out for collaborations or project enquiries.</p>
+      <div class="contact-details">
+          <p>Email: <a href="mailto:ephraimmutwiri01@gmail.com">ephraimmutwiri01@gmail.com</a></p>
+          <p>Phone: <a href="tel:+254112268873">+254 112 268 873</a></p>
+          <p>Order Services:<a href="https://www.ephraimcreations.online/book-online">Visit site</a></p>
+      </div>
+      <br>	
+          <div class="copyright">
+            &copy; 2024-2025 Ephraim Mutwiri.<br>
+             A Website <a href="About Ephraim.html" style="color: #0ff;text-decoration: none;">Designer</a>
+              <br><br><b>Reproduction of content strictly prohibited.</b>
+          </div>
+          <br>
+      </footer>
 
 	
 
